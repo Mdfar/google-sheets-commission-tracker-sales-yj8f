@@ -1,0 +1,9 @@
+-- COMMISSION LOOKUP (Used in Monthly Tabs, Column F) -- =IFERROR(XLOOKUP(C2&D2&E2, Comp_Table!A2:A100 & Comp_Table!B2:B100 & Comp_Table!C2:C100, Comp_Table!D2:D100), 0)
+
+-- MONTHLY TOTAL DEALS (Bottom of Monthly Tabs) -- =COUNTA(B2:B50)
+
+-- MONTHLY TOTAL COMMISSION (Bottom of Monthly Tabs) -- =SUM(F2:F50)
+
+-- YEAR SUMMARY: TOTAL PAID (Sheet 14) -- =SUMPRODUCT(SUMIF(INDIRECT("'"&{"Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"}&"'!G:G"), "Paid", INDIRECT("'"&{"Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"}&"'!F:F")))
+
+-- YEAR SUMMARY: TOTAL UNPAID (Sheet 14) -- =SUMPRODUCT(SUMIF(INDIRECT("'"&{"Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"}&"'!G:G"), "Pending", INDIRECT("'"&{"Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"}&"'!F:F"))) + SUMPRODUCT(SUMIF(INDIRECT("'"&{"Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"}&"'!G:G"), "Held", INDIRECT("'"&{"Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"}&"'!F:F")))
